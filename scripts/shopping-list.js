@@ -1,7 +1,9 @@
-const store = {
-  items: [],
-  hideCheckedItems: false
-};
+import store from './store.js';
+import item from './item.js';
+
+
+
+
 
 const generateItemElement = function (item) {
   let itemTitle = `<span class="shopping-item shopping-item__checked">${item.name}</span>`;
@@ -44,9 +46,22 @@ const render = function () {
   $('.js-shopping-list').html(shoppingListItemsString);
 };
 
+
+//******UPDATED TO USE ITEM MODULE*************************************
 const addItemToShoppingList = function (itemName) {
-  store.items.push({ id: cuid(), name: itemName, checked: false });
+  console.log('addItemToShoppingList runs');
+  try {
+    item.validateName(itemName);
+    let newItemName = item.create(itemName);
+    store.items.push(newItemName);
+    render();
+  } catch (error) {
+    `Cannot add item: ${error.message}`;
+  }
 };
+//******UPDATED TO USE ITEM MODULE*************************************
+
+
 
 const handleNewItemSubmit = function () {
   $('#js-shopping-list-form').submit(function (event) {
