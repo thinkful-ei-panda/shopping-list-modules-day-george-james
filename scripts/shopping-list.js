@@ -60,9 +60,6 @@ const addItemToShoppingList = function (itemName) {
   }
 };
 //******UPDATED TO USE ITEM MODULE*************************************
-
-
-
 const handleNewItemSubmit = function () {
   $('#js-shopping-list-form').submit(function (event) {
     event.preventDefault();
