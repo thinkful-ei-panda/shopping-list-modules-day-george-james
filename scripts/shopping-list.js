@@ -1,5 +1,3 @@
-/* BUGS OCCURRING WITHIN THIS FILE????? */
-
 import store from './store.js';
 import item from './item.js';
 
@@ -160,7 +158,6 @@ const bindEventListeners = function () {
   handleToggleFilterClick();
 };
 
-// This object contains the only exposed methods from this module:
 export default {
   render,
   bindEventListeners
