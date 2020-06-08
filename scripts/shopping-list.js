@@ -35,14 +35,11 @@ const generateShoppingItemsString = function (shoppingList) {
 };
 
 const render = function () {
-  // Filter item list if store prop is true by item.checked === false
   let items = [...store.items];
   if (store.hideCheckedItems) {
     items = items.filter(item => !item.checked);
   }
-  // render the shopping list in the DOM
   const shoppingListItemsString = generateShoppingItemsString(items);
-  // insert that HTML into the DOM
   $('.js-shopping-list').html(shoppingListItemsString);
 };
 
@@ -76,6 +73,8 @@ const handleNewItemSubmit = function () {
 //   foundItem.checked = !foundItem.checked;
 // };
 
+
+///////////////////////////////////////ERROR HAPPENING HERE////////////////////////
 const handleItemCheckClicked = function () {
   $('.js-shopping-list').on('click', '.js-item-toggle', event => {
     const id = getItemIdFromElement(event.currentTarget);
@@ -84,6 +83,8 @@ const handleItemCheckClicked = function () {
     render();
   });
 };
+//////////////////////////////////////////////////////////////////////////////
+
 
 const getItemIdFromElement = function (item) {
   return $(item)

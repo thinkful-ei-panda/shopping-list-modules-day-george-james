@@ -1,4 +1,4 @@
-//function to validate the name*****************
+//VALIDATE NAME *********************************
 let validateName = function (name) {
   console.log('validateName runs');
   if (typeof name === undefined || name === '') {
@@ -6,7 +6,7 @@ let validateName = function (name) {
   }
 };
 
-//function to access the name*****************
+//CREATE & ACCESS NAME *********************************
 let create = function (name) {
   return {
     'id' : cuid(),
@@ -15,7 +15,8 @@ let create = function (name) {
   };
 };
 
-//export function to other modules MUST BE PLACED AT BOTTOM OF DOC AFTER VARIABLES ARE DEFINED************
+//EXPORT FUNCTIONS TO OTHER MODULES********* 
+//MUST BE PLACED AT BOTTOM OF DOC AFTER VARIABLES ARE DEFINED************
 export default {
     validateName,
     create,
